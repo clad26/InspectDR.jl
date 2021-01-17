@@ -12,7 +12,11 @@ end
 __precompile__(!_devmode)
 
 module InspectDR
-
+if isdefined(Base, :Grisu)
+    import Base.Grisu
+else
+    import Grisu
+end
 using Colors
 using Graphics
 using NumericIO
